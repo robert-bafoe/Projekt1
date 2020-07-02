@@ -57,17 +57,11 @@ wordsCount = len(splittedTexts)
 for word in splittedTexts:
     if word.istitle():
         titledWords += 1
-
-for word in splittedTexts:
-    if word.isupper():
+    elif word.isupper():
         upperWords += 1
-
-for word in splittedTexts:
-    if word.islower():
+    elif word.islower():
         lowerWords += 1
-
-for word in splittedTexts:
-    if word.isnumeric():
+    elif word.isnumeric():
         numericWords += 1
         sumOfNumbers += int(word)
 
@@ -86,6 +80,7 @@ for word in words:
     counts.setdefault(len(word),1)
   else:
     counts[len(word)] += 1
+
 for key in sorted(counts):
   print(f"{key} {(counts[key])*'*'} {counts[key]}")
 
